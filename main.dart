@@ -259,9 +259,36 @@ class SingleScrollPageWidget extends StatelessWidget {
   Widget usernameAvatar(String avatarUrl, String username) {
     return Column(
       children: [
-        CircleAvatar(
-          radius: 30,
-          foregroundImage: NetworkImage(avatarUrl),
+        Container(
+          width: 70,
+          height: 70,
+          margin: EdgeInsets.only(bottom: 3),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(251, 170, 71, 1),
+                Color.fromRGBO(217, 26, 70, 1),
+                Color.fromRGBO(166, 15, 147, 1)
+              ],
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(2.5),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(2.5),
+                child: CircleAvatar(
+                  radius: 30,
+                  foregroundImage: NetworkImage(avatarUrl),
+                ),
+              ),
+            ),
+          ),
         ),
         SizedBox(height: 2),
         Text(
