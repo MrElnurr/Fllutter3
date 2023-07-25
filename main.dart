@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SingleScrollPageWidget extends StatelessWidget {
-  const SingleScrollPageWidget({super.key});
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: Container(
@@ -253,7 +257,9 @@ class SingleScrollPageWidget extends StatelessWidget {
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
   Widget usernameAvatar(String avatarUrl, String username) {
